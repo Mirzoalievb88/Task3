@@ -28,18 +28,18 @@
 
 //task3
 
-void PrintDigits(int number)
-{
-    if (number > 0)
-    {
-        PrintDigits(number / 10);
-        Console.Write(number % 10 + " ");
-    }
-}
+// void PrintDigits(int number)
+// {
+//     if (number > 0)
+//     {
+//         PrintDigits(number / 10);
+//         Console.Write(number % 10 + " ");
+//     }
+// }
 
 
-int number = 1234;
-PrintDigits(number);
+// int number = 1234;
+// PrintDigits(number);
 
 //task4
 
@@ -71,22 +71,37 @@ PrintDigits(number);
 
 //task6
 
-// void PrintEvenNumbers(int start, int end)
-// {
-//     if (start > end)
-//         return;
+void PrintEvenNumbers(int start, int end)
+{
+    if (start > end)
+        return;
 
-//     if (start % 2 == 0)
-//     {
-//         Console.Write(start + " ");
-//     }
-//     PrintEvenNumbers(start + 1, end);
-// }
-
-
-// int start = 1, end = 20;
-// Console.WriteLine("All even numbers from " + start + " to " + end + " are: ");
-// PrintEvenNumbers(start, end);
+    if (start % 2 == 0)
+    {
+        Console.Write(start + " ");
+    }
+    PrintEvenNumbers(start + 1, end);
+}
 
 
-//
+int start = 1, end = 20;
+Console.WriteLine("All even numbers from " + start + " to " + end + " are: ");
+PrintEvenNumbers(start, end);
+System.Console.WriteLine(" ");
+
+void Numbers(int sta, int e)
+{
+    if (sta > e)
+        return;
+
+    if (sta % 2 != 0)
+    {
+        Console.Write(sta + " ");
+    }
+    Numbers(sta + 1, e);
+}
+
+
+int sta = 1, e = 20;
+Console.WriteLine("All odd numbers from " + sta + " to " + e + " are: ");
+Numbers(start, end);
